@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>爱游戏 · 游戏生活杂志</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "PingFang SC", "Noto Sans CJK SC", sans-serif;
+      line-height: 1.7;
+      color: #1e1e1f;
+      background: #f5f2ed;
+    }
+
+    /* 深色头图 */
+    .hero {
+      position: relative;
+      background: #1a1c23;
+      color: #eae6df;
+      padding: 80px 24px 60px;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: -60px;
+      left: -60px;
+      width: 280px;
+      height: 280px;
+      background: rgba(255, 200, 100, 0.04);
+      border-radius: 50%;
+      filter: blur(80px);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      bottom: -40px;
+      right: -40px;
+      width: 200px;
+      height: 200px;
+      background: rgba(100, 200, 255, 0.05);
+      border-radius: 50%;
+      filter: blur(70px);
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 500;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 640px;
+      margin: 0 auto;
+      opacity: 0.75;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero .tagline {
+      margin-top: 24px;
+      display: inline-block;
+      background: #2f323c;
+      padding: 8px 20px;
+      border-radius: 40px;
+      font-size: 0.95rem;
+      color: #d6cfc0;
+      letter-spacing: 0.4px;
+    }
+
+    /* 浅色正文区 / 卡片 */
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 48px 24px 60px;
+    }
+
+    .section-card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 32px 32px 28px;
+      margin-bottom: 36px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+      transition: box-shadow 0.2s ease;
+    }
+
+    .section-card:hover {
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
+    }
+
+    .section-card h2 {
+      font-size: 1.6rem;
+      font-weight: 450;
+      margin-bottom: 18px;
+      color: #2a2c31;
+      border-left: 4px solid #e4c580;
+      padding-left: 14px;
+    }
+
+    .section-card p {
+      margin-bottom: 16px;
+      color: #3b3b3b;
+      font-size: 1rem;
+    }
+
+    .section-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .highlight-link {
+      color: #b8863a;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+
+    .highlight-link:hover {
+      color: #7a5e2b;
+      text-decoration-color: #7a5e2b;
+    }
+
+    .inset-quote {
+      background: #f9f6f0;
+      padding: 18px 22px;
+      border-radius: 14px;
+      margin: 20px 0 8px;
+      font-style: normal;
+      border-left: 3px solid #d9c49a;
+      color: #3d3a33;
+      font-size: 0.96rem;
+    }
+
+    .feature-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin: 20px 0 8px;
+    }
+
+    .feature-item {
+      flex: 1 1 160px;
+      background: #f8f6f2;
+      border-radius: 16px;
+      padding: 20px 18px;
+      text-align: center;
+    }
+
+    .feature-item span {
+      display: block;
+      font-size: 1.8rem;
+      margin-bottom: 6px;
+    }
+
+    .feature-item h4 {
+      font-weight: 500;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: #2f2d29;
+    }
+
+    .feature-item p {
+      font-size: 0.9rem;
+      color: #5e5a52;
+      margin-bottom: 0;
+    }
+
+    /* 页尾 */
+    .footer-note {
+      text-align: center;
+      padding: 32px 24px 48px;
+      border-top: 1px solid #ddd8cf;
+      margin-top: 20px;
+    }
+
+    .footer-note p {
+      font-size: 0.95rem;
+      color: #5f5b54;
+    }
+
+    .footer-note .foot-link {
+      color: #b8863a;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      font-weight: 500;
+    }
+
+    .footer-note .foot-link:hover {
+      color: #7e602f;
+    }
+
+    /* FAQ 小摘要 */
+    .faq-mini {
+      list-style: none;
+      padding: 0;
+    }
+
+    .faq-mini li {
+      border-bottom: 1px solid #ece8e0;
+      padding: 12px 0;
+    }
+
+    .faq-mini li:last-child {
+      border-bottom: none;
+    }
+
+    .faq-mini strong {
+      display: block;
+      color: #2b2b2b;
+      font-weight: 550;
+      margin-bottom: 4px;
+    }
+
+    .faq-mini p {
+      margin: 0;
+      color: #58544d;
+      font-size: 0.95rem;
+    }
+
+    /* 响应式 */
+    @media (max-width: 640px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .section-card {
+        padding: 24px 18px 22px;
+      }
+
+      .feature-grid {
+        gap: 14px;
+      }
+
+      .feature-item {
+        flex: 1 1 120px;
+        padding: 14px 12px;
+      }
+
+      .container {
+        padding: 32px 16px 40px;
+      }
+    }
+
+    @media (max-width: 440px) {
+      .hero {
+        padding: 60px 18px 44px;
+      }
+
+      .hero h1 {
+        font-size: 1.7rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 深色头图 -->
+  <header class="hero">
+    <h1>爱游戏 · 日常的入口</h1>
+    <p>一个稳定的起点，让你随时回到喜欢的世界里。没有干扰，没有负担，只有你习惯的那个页面。</p>
+    <span class="tagline">杂志专题 · 游戏生活</span>
+  </header>
+
+  <!-- 正文区域 -->
+  <div class="container">
+
+    <!-- 第一段：背景说明 + 稳定入口 -->
+    <div class="section-card">
+      <h2>从一处安静的页面开始</h2>
+      <p>对很多人来说，游戏不是逃离，而是一种熟悉的节奏。打开浏览器，输入或点开那个已经存好的书签——<a href="https://mainindex-aiyouxi.com.cn" class="highlight-link">爱游戏</a>，就像推开一扇常走的门。里面没有弹窗催促，没有浮夸的标语，只是一个干净、克制的入口，让你选自己想做的事。</p>
+      <p>这个站点从一开始就没有打算成为“大全”或“门户”，它更像一个你在网络里的固定座位。无论是查看感兴趣的游戏动态，还是单纯想找个不吵闹的地方待一会儿，它都一直保持原样。</p>
+      <div class="inset-quote">
+        “稳定不是一成不变，而是你知道它会在那里。爱游戏就是那种不会突然消失或变样的页面。”
+      </div>
+    </div>
+
+    <!-- 第二段：特点 + 场景（卡片+栅格） -->
+    <div class="section-card">
+      <h2>适合日常的三种状态</h2>
+      <p>一个页面之所以让人觉得好用，是因为它不需要你重新适应。花几分钟熟悉之后，它就成为你肌肉记忆的一部分。</p>
+
+      <div class="feature-grid">
+        <div class="feature-item">
+          <span>📋</span>
+          <h4>轻量导航</h4>
+          <p>分类清晰，不堆砌信息，一眼看到你想去的板块。</p>
+        </div>
+        <div class="feature-item">
+          <span>🕊️</span>
+          <h4>低干扰</h4>
+          <p>没有自动播放、飘浮弹窗，你掌握浏览节奏。</p>
+        </div>
+        <div class="feature-item">
+          <span>🔗</span>
+          <h4>直接抵达</h4>
+          <p>常用链接就在手边，省去中间页的等待与跳转。</p>
+        </div>
+      </div>
+
+      <p style="margin-top: 12px;">比如在休息间隙，打开书签栏里的 <a href="https://mainindex-aiyouxi.com.cn" class="highlight-link">爱游戏</a>，扫一眼有没有感兴趣的内容，然后关掉去做别的事。整个过程可能不超过两分钟，但你知道那个入口随时能用。</p>
+    </div>
+
+    <!-- 第三段：场景 + 小FAQ摘要 -->
+    <div class="section-card">
+      <h2>一些常见的疑问</h2>
+      <ul class="faq-mini">
+        <li>
+          <strong>这个页面适合什么样的人？</strong>
+          <p>喜欢直接、清爽浏览体验的人，不希望在首页被大量广告或推荐干扰。无论是偶尔看看还是每天使用，都很自然。</p>
+        </li>
+        <li>
+          <strong>内容会频繁变化吗？</strong>
+          <p>结构保持稳定，信息按需更新。你每次打开 <a href="https://mainindex-aiyouxi.com.cn" class="highlight-link">爱游戏</a> 都能获得一致的熟悉感，同时看到有限但实在的更新。</p>
+        </li>
+        <li>
+          <strong>需要注册或登录吗？</strong>
+          <p>不需要。它就像一个公开的公告板，你来或不来，它都在那里。</p>
+        </li>
+      </ul>
+      <p style="margin-top: 14px;">如果你刚开始用，不妨先在浏览器里保存好地址。之后每次想找一个不吵闹的游戏相关起点，就自然地想起来。</p>
+    </div>
+
+    <!-- 页尾访问提示 -->
+    <div class="footer-note">
+      <p>你随时可以回到这个页面。<br>在地址栏输入 <a href="https://mainindex-aiyouxi.com.cn" class="foot-link">爱游戏</a>，或者把它放在书签里——就像放一本常翻的书在桌上。</p>
+      <p style="margin-top: 12px; font-size: 0.9rem; color: #7b756b;">杂志专题 · 稳定入口 &nbsp;|&nbsp; 简单页面，自在浏览</p>
+    </div>
+
+  </div>
+</body>
+</html>
