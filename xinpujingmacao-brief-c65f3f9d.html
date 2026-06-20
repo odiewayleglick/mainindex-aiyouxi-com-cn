@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>故事的延续 · 澳门新葡京</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #faf7f2;
+            font-family: Georgia, 'Times New Roman', 'Songti SC', serif;
+            color: #3b3531;
+            line-height: 1.8;
+            padding: 2.5rem 1.2rem;
+            max-width: 820px;
+            margin: 0 auto;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 3rem 0.5rem 2rem;
+            border-bottom: 1px solid #e2dcd4;
+            margin-bottom: 2.2rem;
+        }
+
+        .hero h1 {
+            font-weight: 400;
+            font-size: 2.2rem;
+            letter-spacing: 2px;
+            color: #2e2a26;
+        }
+
+        .hero .sub {
+            font-size: 0.95rem;
+            color: #8a7f74;
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+
+        .opening {
+            font-size: 1.1rem;
+            background: #ffffffde;
+            padding: 1.6rem 2rem;
+            border-radius: 18px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            margin-bottom: 2.5rem;
+            border-left: 4px solid #cbb59a;
+        }
+
+        .opening p:first-child:first-letter {
+            font-size: 3.2rem;
+            float: left;
+            padding-right: 0.5rem;
+            line-height: 1;
+            color: #a1876b;
+            font-weight: 400;
+        }
+
+        .bridge {
+            margin: 2rem 0 2.5rem;
+            padding: 0 0.5rem;
+            font-size: 1.05rem;
+            color: #4d443c;
+        }
+
+        .bridge a {
+            color: #7a5f46;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-color: #d0c0ac;
+            transition: all 0.2s ease;
+        }
+
+        .bridge a:hover {
+            color: #3b2b1f;
+            text-decoration-color: #af8f71;
+        }
+
+        .feature-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin: 2.8rem 0 2rem;
+        }
+
+        .feature-item {
+            flex: 1 1 200px;
+            background: #fffffffa;
+            padding: 1.5rem 1.2rem 1.2rem;
+            border-radius: 20px;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.02);
+            border: 1px solid #eee7df;
+            transition: transform 0.2s;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.04);
+        }
+
+        .feature-item h3 {
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: #5e4d3b;
+            border-bottom: 1px dashed #e1d5c7;
+            padding-bottom: 0.4rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .feature-item p {
+            font-size: 0.95rem;
+            color: #5d5248;
+        }
+
+        .blockquote-card {
+            background: #ece6dd;
+            border-radius: 28px;
+            padding: 2rem 2.2rem;
+            margin: 2.5rem 0 2rem;
+            position: relative;
+            border-left: 6px solid #b8a187;
+        }
+
+        .blockquote-card p {
+            font-size: 1.05rem;
+            font-style: italic;
+            color: #433d36;
+        }
+
+        .blockquote-card .source {
+            margin-top: 0.8rem;
+            font-style: normal;
+            font-size: 0.85rem;
+            color: #73665a;
+            text-align: right;
+        }
+
+        .closing {
+            margin: 2.8rem 0 1.5rem;
+            padding: 0 0.3rem;
+            font-size: 1rem;
+            border-top: 1px solid #e6dfd6;
+            padding-top: 2.2rem;
+            text-align: center;
+        }
+
+        .closing p {
+            color: #5b5047;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .faq-mini {
+            margin: 2rem 0 1.2rem;
+            background: #f5efe9;
+            border-radius: 30px;
+            padding: 1.8rem 2rem;
+        }
+
+        .faq-mini summary {
+            font-weight: 500;
+            font-size: 1rem;
+            color: #4a3f36;
+            cursor: pointer;
+            padding: 0.3rem 0;
+            transition: 0.1s;
+        }
+
+        .faq-mini summary:hover {
+            color: #7b624b;
+        }
+
+        .faq-mini p {
+            margin: 0.8rem 0 0;
+            padding-left: 1rem;
+            color: #565048;
+            font-size: 0.96rem;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #ddd7ce;
+            margin: 2rem 0;
+        }
+
+        @media (max-width: 550px) {
+            body {
+                padding: 1.5rem 0.8rem;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .opening {
+                padding: 1.2rem 1rem;
+            }
+            .feature-grid {
+                flex-direction: column;
+            }
+            .blockquote-card {
+                padding: 1.5rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <h1>澳门的记忆之锚</h1>
+    <div class="sub">一段关于光影与土地的叙述</div>
+</div>
+
+<div class="opening">
+    <p>在澳门半岛的南湾湖畔，有一处始终亮着灯火的地方。它不仅是城市轮廓线上的一笔，更是一段深植于街道与海风之间的故事。对于许多往来的人而言，这个名字代表着凝固的时间——它见证过凌晨三点的海风，也见证过正午阳光穿过玻璃幕墙的斑驳。</p>
+</div>
+
+<div class="bridge">
+    <p>有人说，想读懂一座城市的脉络，有时不必翻阅地图，只需要站在它最被熟知的坐标前，看人群如何流动，听声音如何融合。在澳门，那个常被提及的坐标就是<strong><a href="https://xinpujingmacao.com">澳门新葡京</a></strong>——一个与城市记忆交错的名字，既不喧哗，也从未远离。</p>
+</div>
+
+<div class="feature-grid">
+    <div class="feature-item">
+        <h3>光影的节奏</h3>
+        <p>从清晨到深夜，建筑表面的光线随着时辰变换，像一座缓慢呼吸的城市雕塑。很多人喜欢在傍晚经过，那时玻璃幕墙会倒映出澳门独有的暖色天空。</p>
+    </div>
+    <div class="feature-item">
+        <h3>交汇的场域</h3>
+        <p>这里不仅是地标，也是本地生活与外来目光相遇的场所。有人短暂停留，有人长久路过。它的存在，为澳门提供了一种稳定的坐标感。</p>
+    </div>
+    <div class="feature-item">
+        <h3>安静的日常</h3>
+        <p>周围有老店铺、茶餐厅、榕树下的长椅。即使不刻意走近，它也在日常风景里占据一角，成为许多人记忆中熟悉的背景。</p>
+    </div>
+</div>
+
+<div class="blockquote-card">
+    <p>“城市里总有一些建筑，并不需要你每次走近，但你只要知道它在那里，就会觉得脚下的路是踏实的。澳门新葡京大概就是这样的存在。”</p>
+    <div class="source">—— 一位在澳门生活多年的老街坊</div>
+</div>
+
+<div class="faq-mini">
+    <details>
+        <summary>❓ 一些常常被问起的问题</summary>
+        <p><strong>这个建筑的历史很久吗？</strong> 它落成于2000年代之后，但所在的土地承载了更早的澳门故事。即便作为后来者，也已逐渐融入本地人的时间刻度。</p>
+        <p><strong>我可以单纯路过看看吗？</strong> 当然。周边的人行道和公共空间对所有人开放，很多摄影爱好者喜欢来此捕捉光影。它首先是一座公共建筑，其次才是城市符号。</p>
+        <p><strong>为什么很多人会提到它？</strong> 因为它的外形独特，且在澳门的天际线中辨识度很高。但更重要的是，它已经成为了人们叙述澳门时的一个自然支点。</p>
+    </details>
+</div>
+
+<div class="closing">
+    <p>每一座城市都有属于自己的叙事符号，它们不一定宏伟，却总能在不经意间串联起一代人的共同记忆。澳门的光与风、窄巷与海湾，都在等待新的目光与脚步。</p>
+    <p style="margin-top: 0.8rem; font-size: 0.9rem; color:#8a7a6b;">—— 愿你的旅途温和，所见皆有温度。</p>
+</div>
+
+<hr>
+
+<div style="text-align: center; color: #9b8d80; font-size: 0.8rem; letter-spacing: 1px; margin: 1rem 0 0.5rem;">
+    ✦ 故事仍在继续 ✦
+</div>
+
+</body>
+</html>
