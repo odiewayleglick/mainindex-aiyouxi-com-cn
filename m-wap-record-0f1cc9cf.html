@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>麻将胡了 | 主题介绍</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f9f8f6;
+            color: #2f2e2c;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            line-height: 1.7;
+            font-weight: 400;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 48px 24px 80px;
+        }
+
+        /* 顶部导航 */
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 24px;
+            border-bottom: 1px solid #e4e0db;
+            margin-bottom: 48px;
+        }
+
+        .logo-word {
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            font-weight: 500;
+            color: #6f5b4b;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #6f5b4b;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #ab7e5a;
+        }
+
+        /* 主标题区 */
+        .hero {
+            margin-bottom: 56px;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 450;
+            letter-spacing: -0.01em;
+            line-height: 1.25;
+            color: #1f1b18;
+            margin-bottom: 16px;
+        }
+
+        .hero p {
+            font-size: 1.05rem;
+            color: #5a524a;
+            max-width: 600px;
+        }
+
+        .hero .muted-accent {
+            font-size: 0.9rem;
+            color: #9a8a7c;
+            margin-top: 12px;
+        }
+
+        /* 核心介绍 */
+        .intro-block {
+            margin-bottom: 56px;
+        }
+
+        .intro-block h2 {
+            font-size: 1.4rem;
+            font-weight: 450;
+            margin-bottom: 16px;
+            color: #2f2e2c;
+        }
+
+        .intro-block p {
+            margin-bottom: 18px;
+            color: #44413d;
+        }
+
+        .intro-block a {
+            color: #7d634d;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            transition: color 0.2s;
+        }
+
+        .intro-block a:hover {
+            color: #a67b54;
+        }
+
+        /* 三个场景模块 */
+        .scenes {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            margin-bottom: 56px;
+        }
+
+        .scene-card {
+            background: #ffffff;
+            padding: 28px 32px;
+            border-radius: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            border: 1px solid #eee9e3;
+            transition: box-shadow 0.2s;
+        }
+
+        .scene-card:hover {
+            box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+        }
+
+        .scene-card h3 {
+            font-size: 1.15rem;
+            font-weight: 480;
+            margin-bottom: 10px;
+            color: #3a3530;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .scene-card h3::before {
+            content: "·";
+            font-weight: 600;
+            color: #b1947a;
+            font-size: 1.4rem;
+        }
+
+        .scene-card p {
+            font-size: 0.95rem;
+            color: #5a524a;
+            margin-bottom: 6px;
+        }
+
+        .scene-card .tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            background: #f1ede8;
+            color: #6f5b4b;
+            padding: 2px 12px;
+            border-radius: 30px;
+            margin-top: 8px;
+        }
+
+        /* 常见说明 */
+        .faq-section {
+            margin-top: 16px;
+            border-top: 1px solid #e4e0db;
+            padding-top: 40px;
+        }
+
+        .faq-section h2 {
+            font-size: 1.3rem;
+            font-weight: 450;
+            margin-bottom: 24px;
+            color: #2f2e2c;
+        }
+
+        .faq-item {
+            margin-bottom: 24px;
+        }
+
+        .faq-item strong {
+            font-weight: 500;
+            color: #3a3530;
+            display: block;
+            margin-bottom: 4px;
+            font-size: 1rem;
+        }
+
+        .faq-item p {
+            font-size: 0.9rem;
+            color: #5f574e;
+            line-height: 1.6;
+        }
+
+        /* 页脚 */
+        .footer {
+            margin-top: 56px;
+            padding-top: 24px;
+            border-top: 1px solid #e4e0db;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            color: #8f8379;
+        }
+
+        .footer a {
+            color: #7d634d;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+        }
+
+        .footer a:hover {
+            border-bottom-color: #a67b54;
+        }
+
+        /* 响应式 */
+        @media (max-width: 600px) {
+            .container {
+                padding: 32px 18px 60px;
+            }
+            .top-nav {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+                margin-bottom: 32px;
+            }
+            .nav-links {
+                gap: 16px;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .scene-card {
+                padding: 24px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 顶部导航 -->
+        <nav class="top-nav">
+            <span class="logo-word">mahjong</span>
+            <ul class="nav-links">
+                <li><a href="#intro">介绍</a></li>
+                <li><a href="#scenes">场景</a></li>
+                <li><a href="#faq">说明</a></li>
+            </ul>
+        </nav>
+
+        <!-- Hero 区域 -->
+        <div class="hero">
+            <h1>麻将胡了<br>— 一局牌里的节奏与感知</h1>
+            <p>麻将不止是排列组合的游戏，它关乎选择、预判和一点偶然。从摸牌到听牌，每一轮都在寻找那个“胡”的瞬间。</p>
+            <div class="muted-accent">主题内容 · 轻量导航页</div>
+        </div>
+
+        <!-- 核心介绍 -->
+        <div class="intro-block" id="intro">
+            <h2>从“胡”说起</h2>
+            <p>
+                在麻将的语境里，“胡”是终局，也是开始。它代表一副牌完成了内在的秩序，也代表一次博弈的暂时收束。
+                围绕 <a href="https://m-wap-mahjong.com">麻将胡了</a> 这个主题，可以延伸出很多值得细说的侧面：
+                如何判断牌效率，如何管理手牌信息，以及如何在一进一听之间保持思考的弹性。
+            </p>
+            <p>
+                这些内容不追求速成或必胜法则，而是希望呈现麻将作为智力游戏本身的逻辑美感。
+                下面三个场景，是从不同角度对“胡”这一主题的展开。
+            </p>
+        </div>
+
+        <!-- 三个场景模块 -->
+        <div class="scenes" id="scenes">
+            <div class="scene-card">
+                <h3>读牌与信息</h3>
+                <p>每一张舍牌都在透露意图。关注对手的弃牌顺序和碰杠选择，能隐约拼出他们的手牌轮廓。胡牌之前，先读懂牌桌上的暗流。</p>
+                <span class="tag">观察 · 推理</span>
+            </div>
+            <div class="scene-card">
+                <h3>听牌的选择</h3>
+                <p>听多张还是听嵌张？留安全牌还是搏自摸？听牌阶段往往是整局最微妙的时刻。一个好的听牌形态，能让后续节奏从容不少。</p>
+                <span class="tag">决策 · 节奏</span>
+            </div>
+            <div class="scene-card">
+                <h3>防守与放弃</h3>
+                <p>不是每一局都要强行胡牌。面对明显的大牌迹象，果断弃胡、转防守也是一种成熟策略。麻将胡了，有时也体现在懂得何时不胡。</p>
+                <span class="tag">判断 · 克制</span>
+            </div>
+        </div>
+
+        <!-- 常见说明 -->
+        <div class="faq-section" id="faq">
+            <h2>常见说明摘要</h2>
+            <div class="faq-item">
+                <strong>“麻将胡了”是一个具体产品吗？</strong>
+                <p>这里是以“麻将胡了”作为关键词展开的主题介绍页，并非指向某个特定应用或服务。相关内容围绕麻将的玩法、逻辑与场景进行叙述。</p>
+            </div>
+            <div class="faq-item">
+                <strong>页面中的链接指向哪里？</strong>
+                <p>正文中自然嵌入的 <a href="https://m-wap-mahjong.com">麻将胡了</a> 链接，对应一个主题相关的网站，可了解更多背景。</p>
+            </div>
+            <div class="faq-item">
+                <strong>这些内容有地域限制吗？</strong>
+                <p>没有。本文描述的是麻将游戏中的一般概念和思路，不针对任何特定规则或区域玩法，仅供参考与交流。</p>
+            </div>
+        </div>
+
+        <!-- 页脚 -->
+        <div class="footer">
+            <span>© 主题介绍 · 麻将胡了</span>
+            <span><a href="https://m-wap-mahjong.com">麻将胡了</a> · 非官方页面</span>
+        </div>
+    </div>
+</body>
+</html>
